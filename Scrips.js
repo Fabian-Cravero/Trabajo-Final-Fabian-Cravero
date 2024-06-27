@@ -26,26 +26,33 @@ function update(){
     updateTotal();
 }
 
+
+//QUITAR PRODUCTOS DEL CARRO
 function addEvents(){
     let cartRemove_btns = document.querySelectorAll(".cart-remove");
     console.log(cartRemove_btns);
     cartRemove_btns.forEach((btn) =>{
-        btn.addEventListener("clikc", handle_removeCartItem)
+        btn.addEventListener("click", handle_removeCartItem)
     });
-}
 
+//CANTIDAD DE ARTICULOS
 let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
 
 cartQuantity_inputs.forEach((input) =>{
     input.addEventListener("change", handle_changeItemQuantity);
 });
 
+
+//AÑADIR PRODUCTOS AL CARRO
 let addCart_btns = document.querySelectorAll(".add-cart");
 
 addCart_btns.forEach((btn) => {
     btn.addEventListener("click", handle_addCartItem);
 });
 
+}
+
+//COMPRAR
 const buy_btn = document.querySelector(".btn-buy");
 buy_btn.addEventListener("click", handle_buyOrden);
 
@@ -61,6 +68,7 @@ function handle_addCartItem(){
     let newToAdd = {
         title,
         price,
+
         imgSrc,
     };
     
@@ -85,7 +93,7 @@ function handle_removeCartItem(){
     itemsAdded = itemsAdded.filter(
         (el) =>
             el.title != this.parentElement.querySelector(".cart-product-title").innerHTML
-    )
+    );
     update();
 }
 
@@ -114,15 +122,16 @@ function updateTotal(){
     const totalElement = cart.querySelector(".total-price");
     let total = 0;
 
-    cartBoxes.forEach.forEach((cartBox) => {
+    cartBoxes.forEach((cartBox) => {
         let priceElement = cartBox.querySelector(".cart-price");
         let price = parseFloat(priceElement.innerHTML.replace("$", ""));
-        let quantity = cartBox.querySelector(".cart-quantity");
-        total +=price*quantity
+        let quantity = cartBox.querySelector(".cart-quantity").value;
+        total +=price*quantity;
     });
 
     total = total.toFixed(2);
     totalElement.innerHTML = "$" + total;
+    update();
 }
 
 function cartBoxComponent(title,price,imgSrc){
@@ -130,14 +139,15 @@ function cartBoxComponent(title,price,imgSrc){
     <div class="cart-box">
         <img src=${imgSrc} alt="" class="cart-img">
         <div class="detail-box">
+        
             <div class="cart-product-title"> ${title}</div>
             <div class="cart-price"> ${price}</div>
             <input type="number" value="1" class="cart-quantity">
         </div>
-
-        <! ELIMINAR CART >
-        <i class='bx bxs-trash-alt cart-remove'></i>
-
+        
+            <!---ELIMINAR CART --->
+            <i class="bx bxs-trash-alt cart-remove"></i>
+        </div>
     </div>
     `
 }

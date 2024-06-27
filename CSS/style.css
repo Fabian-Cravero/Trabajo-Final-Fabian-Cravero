@@ -33,6 +33,7 @@ img{
 }
 
 header{
+    margin: auto;
     position: fixed;
     top: 0;
     left: 0;
@@ -134,7 +135,7 @@ header{
 .cart-quantify{
     border: 1px solid white;
     outline-color: red;
-    width: 2.4rem;
+    width: 1rem;
     text-align: center;
     font-size: 1rem;
 }
@@ -287,3 +288,4 @@ header{
         width: 280px;
     }
 }
+
