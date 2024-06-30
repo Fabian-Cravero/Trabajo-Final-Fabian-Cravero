@@ -4,8 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vista de Administrador</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-    
+<body class="Administrador">
+    <header>
+        <a href="#" class="logo" onclick="window.open('index.html', '_self')"><span>E</span>Technology</a>
+            <!-- MENU HORIZONTAL (DESKTOP) -->
+        <nav class="menuDesktop">
+            <a href="#" class="vinculos"> Sobre Nosotros</a>
+            <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
+        </nav>
+        <!-- BOTON MENU MOBILE -->
+        <div class="btnMenu" onclick="Menu()">
+            <a href="#" class="vinculos"> Sobre Nosotros</a>
+            <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
+        </div>
+        <!-- MENU VERTICAL (MOBILE) -->
+        <nav id="menuMobile" class="menuMobile">
+            <a href="#" class="vinculos"> Sobre Nosotros</a>
+            <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>    
+        </nav> 
+         
+    </header>
+    <div>
+        <button onclick="mostrarAdministrador()">mostrar datos</button>
+
+    </div>
+    <section class="mostrar-datos"> 
+        <h1>Lista de Mercaderia</h1>
+        <label for="">IdCod del Producto que desees Modificar</label>
+        <input type="text"  placeholder="IdCod del Producto" id="IdCod_Modificar">
+        <button onclick="">Buscar IdCod</button>
+        <table>
+            <tr>
+                <th>IdCod </th>
+                <th>Titulo </th>
+                <th>Precio </th>
+                <th>Stock </th>
+                <th>Ultima Modificacion </th>
+            </tr>
+                <tbody id="resultados"></tbody>
+        </table>
+    </section >
+    <section class="Cargar-Nuevo">
+        <h1>Crear Nuevo Producto</h1>
+            <form action="javascript:none" id="form">
+                <div>
+                <label for="">Titulo</label>
+                <input type="text"  placeholder="Ingrese el Titulo" id="Titulo">
+                <label for="">Precio $</label>
+                <input type="number"  placeholder="Ingrese el Precio" id="Precio">
+                <label for="">Stock</label>
+                <input type="number"  placeholder="Ingrese el Stock" id="Stock">
+                <label for="">Fecha </label>
+                <input type="date"  placeholder="Ingrese la Fecha" id="Fecha">
+                <button onclick="GuardarProducto()">Cargar Productos</button>
+                </div>
+            </form>
+    </section>
+        
+    <section class="Modificar-Producto">
+        <H1>Modificar</H1>
+        <form action="javascript:none" id="form">
+            <div>
+            <label for="">Titulo a Modificar</label>
+            <input type="text"  placeholder="Ingrese el Titulo" id="Titulo_Modificar">
+            <label for="">Precio $ a Modificar</label>
+            <input type="number"  placeholder="Ingrese el Precio" id="Precio_Modificar">
+            <label for="">Stock a Modificar</label>
+            <input type="number"  placeholder="Ingrese el Stock" id="Stock_Modificar">
+            <label for="">Fecha a Modificar</label>
+            <input type="date"  placeholder="Ingrese la Fecha de Modificacion" id="Fecha_Modificar">
+            <button onclick="ModificarProducto()">Modificar Producto</button>
+            </div>
+        </form>
+    </section>
+    <script src="Scrips.js"></script>  
 </body>
 </html>

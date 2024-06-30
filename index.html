@@ -11,12 +11,23 @@
 </head>
 <body>
     <header>
-        <div class="nav conteainer">
-            <a href="#" class="logo"><span>E</span>Technology</a>
+        <a href="#" class="logo" onclick="window.open('index.html', '_self')"><span>E</span>Technology</a>
+            <!-- MENU HORIZONTAL (DESKTOP) -->
+        <nav class="menuDesktop">
+             <a href="#" class="vinculos"> Sobre Nosotros</a>
+             <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
+        </nav>
+
+            <!-- BOTON MENU MOBILE -->
+        <div class="btnMenu" onclick="Menu()">
             <a href="#" class="vinculos"> Sobre Nosotros</a>
-            <a href="#" class="vinculos"> Vista de Administrador</a>
-            
-        </div>        
+            <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
+        </div>
+        <!-- MENU VERTICAL (MOBILE) -->
+        <nav id="menuMobile" class="menuMobile">
+            <a href="#" class="vinculos"> Sobre Nosotros</a>
+            <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>    
+        </nav>    
     </header>
 
     <section class="shop conteainer">
