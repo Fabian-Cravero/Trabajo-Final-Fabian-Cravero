@@ -76,7 +76,7 @@ a {
 
 .shop-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, mimmax(220px, auto));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
@@ -106,41 +106,41 @@ a {
     margin-bottom: .5rem;
 }
 
-/* Estilo de navegación y botón de menú */
+
 nav{
     background-color: black;
 }
 nav,
 .btnMenu {
     background-color: black;
-    position: relative; /* Posición relativa para alinear el botón de menú */
-    top: 27px; /* Desplazamiento hacia abajo */
+    position: relative; 
+    top: 27px; 
 }
 
 .menuMobile {
-    width: 200px; /* Ancho del menú */
-    position: absolute; /* Posición relativa para desplazar */
-    top: 110px; /* Desplazamiento hacia abajo */
-    right: -300px; /* Inicialmente fuera de la pantalla */
-    display: none; /* Ocultar inicialmente */
-    transition: all 1s; /* Transición suave */
+    width: 200px; 
+    position: absolute; 
+    top: 110px; 
+    right: -300px; 
+    display: none; 
+    transition: all 1s; 
   }
   
   .btnMenu {
-    width: 30px; /* Ancho del botón */
-    aspect-ratio: 1/1; /* Relación de aspecto cuadrada */
-    display: none; /* Ocultar inicialmente en tamaños de pantalla grandes */
-    cursor: pointer; /* Cambia el cursor del mouse a una mano cuando se pasa sobre el elemento, indicando que es interactivo */
+    width: 30px; 
+    aspect-ratio: 1/1; 
+    display: none; 
+    cursor: pointer; 
   }
 
-  /* Estilo de los enlaces del menú móvil */
+
   .menuMobile a {
-    display: block; /* Convertir en bloques para ocupar el ancho */
+    display: block; 
   }
   
-  /* Estilo para abrir el menú móvil */
+
   .menuMobileOpen {
-    right: 50px; /* Ajustar la posición para mostrar el menú */
+    right: 50px; 
   }
 
   header{
@@ -191,4 +191,11 @@ input {
     box-sizing: border-box;
     border: 2px solid red;
     border-radius: 4px;
+  }
+
+  #mostrar-datos, #Cargar-Nuevo, #Modificar-Producto{
+    display: none;
+  }
+  footer{
+    font-size: 3px;
   }

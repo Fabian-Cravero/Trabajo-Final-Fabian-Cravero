@@ -11,30 +11,27 @@
         <a href="#" class="logo" onclick="window.open('index.html', '_self')"><span>E</span>Technology</a>
             <!-- MENU HORIZONTAL (DESKTOP) -->
         <nav class="menuDesktop">
-            <a href="#" class="vinculos"> Sobre Nosotros</a>
-            <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
+             <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
         </nav>
-        <!-- BOTON MENU MOBILE -->
+
+            <!-- BOTON MENU MOBILE -->
         <div class="btnMenu" onclick="Menu()">
-            <a href="#" class="vinculos"> Sobre Nosotros</a>
             <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>
         </div>
         <!-- MENU VERTICAL (MOBILE) -->
         <nav id="menuMobile" class="menuMobile">
-            <a href="#" class="vinculos"> Sobre Nosotros</a>
             <a href="#" class="vinculos" onclick="window.open('Administrador.html', '_self')"> Vista de Administrador</a>    
-        </nav> 
-         
+        </nav>    
     </header>
     <div>
-        <button onclick="mostrarAdministrador()">mostrar datos</button>
-
+        <button  onclick="abrir_cerrar_Datos()">mostrar datos</button>
+        <button  onclick="abrir_cerrar_Nuevo()">Nuevos Productos</button>
     </div>
-    <section class="mostrar-datos"> 
+    <section id="mostrar-datos"> 
         <h1>Lista de Mercaderia</h1>
-        <label for="">IdCod del Producto que desees Modificar</label>
-        <input type="text"  placeholder="IdCod del Producto" id="IdCod_Modificar">
-        <button onclick="">Buscar IdCod</button>
+
+        
+
         <table>
             <tr>
                 <th>IdCod </th>
@@ -46,7 +43,7 @@
                 <tbody id="resultados"></tbody>
         </table>
     </section >
-    <section class="Cargar-Nuevo">
+    <section id="Cargar-Nuevo">
         <h1>Crear Nuevo Producto</h1>
             <form action="javascript:none" id="form">
                 <div>
@@ -63,10 +60,11 @@
             </form>
     </section>
         
-    <section class="Modificar-Producto">
+    <section id="Modificar-Producto">
         <H1>Modificar</H1>
         <form action="javascript:none" id="form">
             <div>
+            <input type="text"  placeholder="IdCod del Producto" id="IdCod_Modificar">
             <label for="">Titulo a Modificar</label>
             <input type="text"  placeholder="Ingrese el Titulo" id="Titulo_Modificar">
             <label for="">Precio $ a Modificar</label>
@@ -75,10 +73,15 @@
             <input type="number"  placeholder="Ingrese el Stock" id="Stock_Modificar">
             <label for="">Fecha a Modificar</label>
             <input type="date"  placeholder="Ingrese la Fecha de Modificacion" id="Fecha_Modificar">
-            <button onclick="ModificarProducto()">Modificar Producto</button>
+            <button onclick="Guardar_Modificacion()">Modificar Producto</button>
             </div>
         </form>
     </section>
-    <script src="Scrips.js"></script>  
+<footer>
+<a href="">Dirrecion:Falucho 1111</a>
+<a href="">Numero de telefono: 3493 441894</a>
+</footer>
+<script src="Scrips.js"></script>  
 </body>
+
 </html>
